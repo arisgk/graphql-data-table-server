@@ -11,7 +11,7 @@ Create an `.env` file in project root to register the following required environ
 To start the server run:
 ```
 npm install
-node server
+node index.js
 ```
 
 You can use [Nodemon](https://github.com/remy/nodemon) to automatically restart the server when changes are detected:
@@ -19,7 +19,7 @@ You can use [Nodemon](https://github.com/remy/nodemon) to automatically restart 
 ```
 npm install
 npm install -g nodemon
-nodemon server
+nodemon
 ```
 
 ### Data Store
