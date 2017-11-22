@@ -5,6 +5,7 @@ const { mongodb } = require('../databases/');
 const graphqlRoute = require('./routes/graphql');
 const graphiqlRoute = require('./routes/graphiql');
 const errorRoute = require('./routes/error');
+const cors = require('cors');
 
 const app = express();
 mongodb.connector.connect();
@@ -18,7 +19,7 @@ module.exports = (resolvers) => {
   const graphql = graphqlRoute.create(resolvers);
   const graphiql = graphiqlRoute.create();
 
-  app.use('/graphql', graphql);
+  app.use('/graphql', cors(), graphql);
   app.use('/graphiql', graphiql);
 
   app.use(errorRoute);
