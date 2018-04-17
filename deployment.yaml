@@ -1,0 +1,20 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: graphql-server-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: graphql-server
+  template:
+    metadata:
+      labels:
+        app: graphql-server
+    spec:
+      containers:
+      - name: graphql-server
+        image: gcr.io/static-factor-184810/data-table-graphql-server:latest
+        ports:
+        - containerPort: 5000
+        
